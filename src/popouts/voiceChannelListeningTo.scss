@@ -1,16 +1,10 @@
 //Voice Channel listening to or playing x game
-.container__56cd1 {
-  background-color: rgba(0, 0, 0, 0.8);
+%voiceChannelListening {
+  background: cv('bg.general.popout');
 }
-.button__6ac9e {
-  &:hover {
-    background-color: $hover-color;
-    border-color: $main-color !important;
-  }
-}
-.iconButton-285DXF {
-  &:hover {
-    background-color: $hover-color;
-    border-color: $main-color !important;
+%voiceChannelListeningIcon {
+  background: $main-color;
+  > svg {
+    color: #fff;
   }
 }

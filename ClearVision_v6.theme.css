@@ -1,7 +1,7 @@
 /**
  * @name ClearVision
  * @author ClearVision Team
- * @version 6.3.0
+ * @version 6.9.0
  * @description Highly customizable theme for BetterDiscord.
  * @source https://github.com/ClearVision/ClearVision-v6
  * @website https://clearvision.github.io
@@ -36,6 +36,7 @@
   --text-muted: rgb(114, 118, 125); /* color of default discord muted text (e.g.text found in input fields before typing).*/
   --channels-width: 220px; /* channel list width (240px for Discord default) [default: 220px] */
   --members-width: 240px; /* member list width [default: 240px] */
+  --server-unread: var(--main-color); /* Color of the icon for servers with unread messages [default: var(--main-color)] */
 
   /* APP BACKGROUND */
   --background-shading: 100%; /* app background shading (0 for complete smoothness) [default: 100%] */

@@ -4,12 +4,12 @@
   %modalRoot {
     background: rgba(0, 0, 0, 0.5);
     box-shadow: none;
+    backdrop-filter: blur(1.5px);
     %modalFooter,
     %uploadModalFooter,
-    .formFieldWrapper-2LV3S6,
-    .guildSidebar__8763f,
-    .formFieldWrapper-2LV3S6,
-    .settingsFormFieldWrapper-U99c9i {
+    %guildSidebarModal,
+    %formFieldWrapper,
+    %settingsFormFieldWrapper {
       background: transparent;
       box-shadow: none;
     }

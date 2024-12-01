@@ -23,11 +23,11 @@
   }
 
   // CONTENT
+  %messageContent {
+    color: $text-normal;
+  }
   %messageSystemContainer {
     color: hsla(0, 0%, 100%, 0.5);
-  }
-  %markup {
-    color: var(--text-normal);
   }
 
   // BLOCKQUOTE
@@ -38,19 +38,31 @@
     }
   }
 }
+
 // GIFS/EMBEDS
 %messageInlineMediaEmbed {
   max-width: max-content;
 }
+
+// SPOILER
+%messageSpoiler {
+  background-color: hsla(0, 0%, 0%, 0.8);
+}
+
 // LINKS
 %markup a,
 %anchor {
   color: var(--url-color);
 }
+%messageSystemContent {
+  %anchorAction {
+    color: var(--url-color);
+  }
+}
 
 // INVALID GIFT
 %themeDark {
-  .tile_ebc93b {
+  %messageInvalidGift {
     background-color: hsla(0, 0%, 0%, 0.4);
     &:hover {
       background-color: hsla(0, 0%, 0%, 0.4);
@@ -60,28 +72,33 @@
 
 // REPLY
 %messageReplied {
-  &:before {
+  %messageRepliedSpine {
     border-color: $main-color;
+    &%messageRepliedContentHovered {
+      border-color: $hover-color;
+    }
   }
   %messageRepliedTextPreview {
     opacity: 0.7;
-    &%messageRepliedTextPreviewClickable:hover {
-      opacity: 1;
-    }
-    %messageRepliedTextContent {
+    max-height: unset;
       color: #fff;
+    &%messageRepliedSpineHovered {
+      opacity: 1;
     }
     %messageRepliedTextPlaceholder {
       color: $main-color;
     }
   }
-  %messageRepliedTextContentIcon {
-    opacity: 0.7;
-    %messageRepliedTextPreview:hover + & {
-      opacity: 1;
-    }
-  }
   &%messageRepliedExecutedCommand {
+    %messageRepliedAppLauncherCommandName {
+      color: $main-color;
+      background: transparent;
+      text-decoration: underline;
+      &:hover {
+        color: $hover-color;
+        background: transparent;
+      }
+    }
     %messageRepliedCommandName {
       color: $main-color;
     }
@@ -92,6 +109,7 @@
 %threadChatIcon {
   color: $main-color;
   filter: drop-shadow(0 0 3px);
+  height: 22px;
   width: 22px;
 }
 %threadEmbed {
@@ -158,26 +176,45 @@
 }
 
 // PUBLISH TO FOLLOWERS
-.bumpBox_cfd81a {
+%messagePublishBumpBox {
   background: hsla(0, 0%, 0%, 0.4);
 }
-.icon_c766f4,
-.tagline_a404cb {
+%messagePublishIcon,
+%messagePublishTagline {
   color: #fff;
 }
-.closeIcon__1f39d,
-.hidePermanently_a71dd2 {
+%messagePublishCloseIcon,
+%messagePublishPermanentHide {
   color: hsla(0, 0%, 100%, 0.4) !important;
 }
 
 // AUTOMOD MESSAGE
-.embedCard__66fca,
-.footerContainer_a703d5 {
+%messageAutomodCard,
+%messageAutomodFooterContainer {
   background-color: hsla(0, 0%, 0%, 0.4);
 }
-.footerAction_fba33a .text-xs-normal_ccc5fb {
-  color: $main-color !important;
+%messageAutomodCard {
+  &%messageAutomodCardSelected {
+    background-color: hsla(0, 0%, 0%, 0.4);
+  }
 }
-.footerIcon__61cc7 path {
-  fill: $main-color;
+%messageAutomodFooterAction {
+  %textExtraSmallNormal,
+  %messageAutomodFooterIcon path {
+    color: var(--url-color);
+  }
+}
+
+// free nitro trial...idk where to put this - Snow
+%nitroTrial {
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: none;
+  border: 1px solid $main-color;
+  &:hover {
+    border: 1px solid $hover-color;
+  }
+}
+
+%themeDark %nitroTrial:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }

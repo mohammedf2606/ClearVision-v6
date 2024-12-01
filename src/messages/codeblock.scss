@@ -2,7 +2,7 @@
 %markup {
   // INLINE CODE
   code%codeInline {
-    padding: 3.5px 7.5px;
+    padding: 1px 5px;
     background-color: hsla(0, 0%, 100%, 0.1);
     border-radius: 3px;
     color: hsla(0, 0%, 100%, 0.7);
@@ -14,6 +14,9 @@
   }
   %codeActions {
     z-index: 999;
+  }
+  code {
+    border: 1px solid transparent;
   }
 }
 // CODEBLOCK

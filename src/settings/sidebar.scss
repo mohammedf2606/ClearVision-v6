@@ -17,7 +17,7 @@
   height: 100%;
   width: 260px;
   padding: 0px 6px 0px 20px;
-  %settingsSide {
+  %tabBarSide {
     padding: 30px 0;
   }
 }
@@ -58,11 +58,11 @@
 }
 %standardSidebarView {
   %settingsSidebar {
-    %settingsSide {
+    %tabBarSide {
       %tabBarItem {
         position: relative;
-        padding: 8px 8px 8px 20px;
-        color: hsla(0, 0%, 100%, 0.4);
+        padding: 8px 20px;
+        color: var(--channel-color);
         margin: 0;
         background: transparent;
         transition: all 0.15s ease-in-out;
@@ -93,6 +93,13 @@
 
         // SELECTED
         &%tabBarItemSelected {
+          background: transparent;
+          color: #fff;
+          transition: all 0.15s ease-in-out, background 0.3s 0.2s;
+          padding-left: 50px;
+          %settingsSidebarNitroSelected {
+            background-color: transparent;
+          }
           &:before {
             opacity: 1;
           }
@@ -102,36 +109,10 @@
             animation: cv-channel-select 0.3s ease-in-out;
           }
         }
-        &%tabBarItemSelected {
-          background: transparent;
-          color: #fff;
-          transition: all 0.15s ease-in-out, background 0.3s 0.2s;
-          &%serverBoostTabItem {
-            background-color: transparent !important;
-          }
-          %settingsSidebarScrollerSelectedBackground {
-            background-color: transparent;
-          }
-        }
 
-        // DANGER
-        &[aria-controls='logout-tab'],
-        &[aria-controls='delete-tab'] {
-          color: cv('colors.danger');
-          &:hover {
-            background-color: cv('colors.danger');
-            color: #fff;
-          }
-          &:before {
-            background-color: cv('colors.danger');
-            opacity: 1;
-          }
-          &:hover {
-            &:before {
-              background-color: #fff;
-              opacity: 1;
-            }
-          }
+        // ONBOARDING STEP COUNTER
+        %textMediumNormal {
+          color: #fff !important;
         }
       }
     }

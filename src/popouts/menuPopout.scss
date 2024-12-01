@@ -1,6 +1,6 @@
 /* MENU POPOUT */
 %menuPopout {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: cv('bg.general.popout');
   animation: cv-menu-fold-y 0.2s cubic-bezier(0.2, 0.6, 0.5, 1.1);
   transform-origin: 50% 0;
   %menuPopoutItem {
@@ -14,7 +14,7 @@
         color: #fff;
       }
       %menuPopoutCheck {
-        color: $main-color;
+        fill: $main-color;
       }
     }
     &%menuPopoutSelected:active:not(%menuPopoutHideInteraction) {
@@ -54,7 +54,7 @@
     box-shadow: 0 0 2px 2px $hover-color;
   }
 }
-.premiumUpsell_e1bfd9 {
+%quickReactPremiumUpsell {
   background-color: transparent;
 }
 
@@ -66,27 +66,6 @@
   }
   %channelThreadPopoutMore {
     color: $main-color;
-  }
-}
-
-// HELP US UNDERSTAND WHY YOU'RE DELETING THIS SERVER
-%serverDeleteReasonOption {
-  color: #fff;
-  background: $main-color;
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.08);
-  transition: all 0.15s ease-in-out;
-  &:hover {
-    background: $hover-color;
-  }
-}
-%deleteServerCheckbox {
-  %deleteServerCheckboxInner {
-    %deleteServerCheckboxElement {
-      &:checked + span {
-        background-color: $main-color;
-        border-color: $main-color;
-      }
-    }
   }
 }
 
@@ -134,5 +113,15 @@
   }
   %userPopoutBodyInnerWrapper {
     background-color: transparent;
+  }
+}
+
+// ACCOUNT SWITCHER
+%switchAccountsActive {
+  path {
+    fill: $main-color;
+  }
+  %menuPopoutItemHover & circle {
+    fill: $main-color;
   }
 }

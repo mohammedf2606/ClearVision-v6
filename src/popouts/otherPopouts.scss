@@ -1,6 +1,6 @@
 // EMOJI INFO POPOUT
 %emojiInfoContainer {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: cv('bg.general.popout');
 }
 %emojiInfoTip {
   background-color: transparent;
@@ -11,13 +11,12 @@
 
 // CHAT TOOLBAR
 %chatToolbar {
-  background-color: hsla(0, 0%, 0%, 0.8);
+  background-color: cv('bg.general.popout');
   &::before {
     border-top: 8px solid hsla(0, 0%, 0%, 0.8);
   }
 }
-%chatToolbarActive,
-%chatToolbarHover:hover {
+%chatToolbarButton:hover {
   background-color: hsla(0, 0%, 100%, 0.05);
 }
 %chatToolbarIcon {
@@ -27,7 +26,7 @@
 // STREAM POPOUT
 %themeDark {
   %streamPopoutPreview {
-    background-color: hsla(0, 0%, 0%, 0.8);
+    background-color: cv('bg.general.popout');
   }
   %streamPopoutPreviewContainer {
     background-color: transparent;
@@ -42,24 +41,39 @@
   }
 }
 
-// STUDENT HUBS
-%hubPopoutSidebar {
-  background: transparent;
+// VC ACTIVITY STATUS POPOUT
+%vcActivityPopout,
+%vcSetActivityPopout {
+  background-color: cv('bg.general.popout');
+}
+%vcSetActivityPopoutIcon {
+  background-color: hsla(0, 0%, 100%, 0.07);
+  border-color: hsla(0, 0%, 100%, 0.09);
+  &:hover {
+    background-color: hsla(0, 0%, 100%, 0.07);
+    border-color: $hover-color;
+  }
+}
+%vcSetActivityPopoutButton {
+  background-color: $main-color;
+  border-color: transparent;
+  &:hover {
+    background-color: $hover-color;
+    border-color: transparent;
+  }
 }
 
 // LEAVE SERVER REASON
 %serverLeave {
   background-color: transparent;
 }
-%serverLeaveReason {
-  %serverDeleteReasonOption {
-    color: #fff;
-    background: hsla(0, 0%, 100%, 0.03);
-    border: 1px solid hsla(0, 0%, 100%, 0.05);
-    border-top: none;
-    &:first-child {
-      border-top: 1px solid hsla(0, 0%, 100%, 0.05);
-    }
+%serverLeaveOption {
+  color: #fff;
+  background: hsla(0, 0%, 100%, 0.03);
+  border: 1px solid hsla(0, 0%, 100%, 0.05);
+  border-top: none;
+  &:first-child {
+    border-top: 1px solid hsla(0, 0%, 100%, 0.05);
   }
   &:hover {
     background: hsla(0, 0%, 100%, 0.06);
@@ -69,12 +83,6 @@
 // NITRO PROFILE PICTURE UPSELL
 /*right popout*/
 %sidebarPFPUpsell {
-	background: var(--background-overlay);
-	border-left: 5px solid $main-color;
-}
-
-/*bottom left popout*/
-%userPFPUpsell,
-%userPFPUpsellTop {
-	background: var(--background-overlay);
+  background: var(--background-overlay);
+  border-left: 5px solid $main-color;
 }
